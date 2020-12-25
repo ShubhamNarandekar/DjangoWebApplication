@@ -1,0 +1,40 @@
+<!{% load fullcalendar_tags %}
+
+<!DOCTYPE html>
+<head>
+
+    <title></title>
+
+    {% fullcalendar_css %}
+    {% fullcalendar_print_css %}
+    {% fullcalendar_jquery %}
+    {% fullcalendar_jquery_ui %}
+    {% fullcalendar_javascript %}
+
+    {% calendar_init event_url %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+          </div>
+          {% if user.is_authenticated %}
+          <div>
+            <h4 class="text-white row"> {{ user.username}} </h4>
+            <a href="{% url 'logout' %}">
+            <button type="submit" class="btn btn-primary mt-3 mb-3">Logout</button>
+            </a> 
+           </div>
+            
+          {% else %}
+            <p class="text-white row"> Logged Out </p>
+          {% endif %}
+        </div>
+      </nav>
+
+
+
+</head>
+
+<body>
+    {% calendar %}
+</body>>

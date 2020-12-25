@@ -1,0 +1,49 @@
+{% extends 'base1.html' %}
+
+{% block title %}
+Event Details
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="clearfix">
+            <a class="btn btn-primary left btn-sm" href="{% url 'calendarapp:calendar' %}"> Calendar </a>
+            <a class="btn btn-info right mr-2 btn-sm" href="{% url 'calendarapp:delete_event' event.pk %}"> Delete Event </a>
+            <a class="btn btn-info right mr-2 btn-sm" href="{% url 'calendarapp:event_edit' event.pk %}"> Edit Event </a>
+        </div>
+        
+        <div class="clearfix">
+            <h3>Event Name: {{ event.title }}</h3>
+            <p>From <span style="color: gray;">{{ event.start_time }}</span> To <span style="color: gray;">{{ event.end_time }}</span></p>
+            <hr>
+            <h4>Description: </h4> <p>{{ event.description }}</p>
+        </div>
+        <hr>
+        <div class="clearfix">
+            <h4 class="left" > Shared with :-</h4>
+            <a class="btn btn-success right btn-sm" href="{% url 'calendarapp:add_eventmember' event.id %}"> Share </a>
+        </div>
+        <div class="row d-flex justify-content-center bg-dark text-white">
+        <table class="table table-bordered">
+            <thead>                  
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for member in eventmember %}
+                <tr role="row">
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ member.user.username }}</td>
+                    <td>
+                        <a class="btn btn-danger text-white btn-sm" href="{% url 'calendarapp:remove_event' member.id %}">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock %}
