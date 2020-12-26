@@ -4,12 +4,12 @@
 Event Details
 {% endblock %}
 
-{% block content %}
+{% block body %}
     <div class="container">
         <div class="clearfix">
             <a class="btn btn-primary left btn-sm" href="{% url 'calendarapp:calendar' %}"> Calendar </a>
-            <a class="btn btn-info right mr-2 btn-sm" href="{% url 'calendarapp:delete_event' event.pk %}"> Delete Event </a>
-            <a class="btn btn-info right mr-2 btn-sm" href="{% url 'calendarapp:event_edit' event.pk %}"> Edit Event </a>
+            <a class="btn btn-info left ml-5 btn-sm" href="{% url 'calendarapp:delete_event' event.pk %}"> Delete Event </a>
+            <a class="btn btn-info left ml-5 btn-sm" href="{% url 'calendarapp:event_edit' event.pk %}"> Edit Event </a>
         </div>
         
         <div class="clearfix">

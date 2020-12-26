@@ -125,4 +125,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/calender/'
+LOGIN_REDIRECT_URL = 'http://ec2-34-244-11-148.eu-west-1.compute.amazonaws.com/calender/'

@@ -2,18 +2,19 @@
 
 
 {% block head %}
-    <li class="nav-item right">
-        <a class="btn btn-light btn-sm right mr-2 text-white" href="{% url 'calendarapp:calendar' %}?{{ prev_month }}">Previous Month</a>
+    <li class="nav-item dropdown d-flex justify-content-end">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Months</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'calendarapp:calendar' %}?{{ prev_month }}">Previous Month</a>
+      <a class="dropdown-item" href="{% url 'calendarapp:calendar' %}?{{ next_month }} ">Next Month</a>
+    </div>
     </li>
-    <li class="nav-item right">
-        <a class="btn btn-light btn-sm right mr-2 text-white" href="{% url 'calendarapp:calendar' %}?{{ next_month }} ">Next Month</a>
-    </li>
-    <li class="nav-item right">
-        <a class="btn btn-light btn-sm right mr-2 text-white" href="{% url 'calendarapp:event_new' %}">Add Event</a>
-    </li>
+    <a class="nav-link d-flex justify-content-end" style="color:bisque" href="{% url 'calendarapp:event_new' %}">Add Event</a>
 {% endblock %}
-{% block content %}
-<div style="color: rgb(18, 47, 211);">
+{% block body %}
+<div class="container mt-2 shadow" style="background-color:lemonchiffon">
+<div style="color: rgb(18, 47, 211)">
     {{ calendar }}
+</div>
 </div>
 {% endblock %}
