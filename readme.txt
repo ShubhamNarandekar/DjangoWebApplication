@@ -1,0 +1,20 @@
+Requirements:
+1. Python 3.6 and above
+2. Virtual Environment (pipenv or virtualenv)
+
+Run the commands below after downloading and axtracting the DjangoWebApplication folder:
+==================================================================================
+pip install virtualenv
+virtualenv newenv
+
+cd DjangoWebApplication
+
+pip install -r requirements.txt
+
+python manage.py runserver
+==================================================================================
+Running Migrations:
+Not required, as the web application will have sample data in the DB.
+
+#python manage.py makemigrations
+#python manage.py migrate
