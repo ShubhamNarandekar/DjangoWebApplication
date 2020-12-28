@@ -4,14 +4,17 @@ Requirements:
 
 Run the commands below after downloading and axtracting the DjangoWebApplication folder:
 ==================================================================================
-pip install virtualenv
-virtualenv newenv
+$pip install virtualenv
+$virtualenv newenv
 
-cd DjangoWebApplication
+$newenv/Scripts/activate (For Windows)
+$newenv/bin/activate (For Linux)
 
-pip install -r requirements.txt
+$cd DjangoWebApplication
 
-python manage.py runserver
+$pip install -r requirements.txt
+
+$python manage.py runserver
 ==================================================================================
 Running Migrations:
 Not required, as the web application will have sample data in the DB.
