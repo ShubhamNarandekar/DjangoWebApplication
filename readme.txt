@@ -10,11 +10,11 @@ $virtualenv newenv
 $newenv/Scripts/activate (For Windows)
 $newenv/bin/activate (For Linux)
 
-$cd DjangoWebApplication
+(newenv)$cd DjangoWebApplication
 
-$pip install -r requirements.txt
+(newenv)$pip install -r requirements.txt
 
-$python manage.py runserver
+(newenv)$python manage.py runserver
 ==================================================================================
 Running Migrations:
 Not required, as the web application will have sample data in the DB.
