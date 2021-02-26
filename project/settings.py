@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'aw2_e!#_ohg-*bhqgex@f!%&z8cwmyncm1w(+$8hp*ein9z^jn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -125,4 +125,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'http://ec2-34-244-11-148.eu-west-1.compute.amazonaws.com/calender/'
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/calender/'
